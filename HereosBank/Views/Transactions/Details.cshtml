@@ -1,0 +1,58 @@
+﻿@model HereosBank.Models.Transaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compte.NumCompte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compte.NumCompte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTransaction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTransaction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeTransaction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeTransaction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Montant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Montant)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
