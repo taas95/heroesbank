@@ -10,8 +10,11 @@ namespace HereosBank.Models
     public class Compte
     {
         [Key]
+        [Display(Name ="Numéro de compte")]
         public string NumCompte { get; set; }
         public float Solde { get; set; }
+        [Display(Name = "Date de création")]
+
         public DateTime DateCreation { get; set; }
         public virtual List<Transaction> Transactions { get; set; }
         public int ClientId { get; set; }

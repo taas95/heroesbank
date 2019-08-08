@@ -18,7 +18,12 @@ namespace HereosBank.Models
         public string Prenom { get; set; }
         [MaxLength(50)]
         public string Sexe { get; set; }
+        [Display(Name = "Date de naissance")]
+
         public DateTime DateNaissance { get; set; }
+
+        [Display(Name = "Numéro de carte")]
+
         public string NumCarte { get; set; }
         public string Adresse { get; set; }
         public virtual List<Compte> Comptes { get; set; }

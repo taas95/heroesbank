@@ -12,7 +12,7 @@ namespace HereosBank.Controllers
 {
     public class UtilisateursController : Controller
     {
-        private HereosModel db = new HereosModel();
+        private HeroModelDBContext db = new HeroModelDBContext();
 
         // GET: Utilisateurs
         public ActionResult Index()

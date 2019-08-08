@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+@using HereosBank.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Connexion";
+}
+
+<link rel="stylesheet" href="~/Content/CustomElements/css/main.css" />
+<link rel="stylesheet" href="~/Content/CustomElements/css/util.css" />
+<link rel="stylesheet" href="~/Content/bootstrap.css" />
+<link rel="stylesheet" href="~/Content/CustomElements/vendor/animate/animate.css" />
+<link rel="stylesheet" href="~/Content/CustomElements/vendor/css-hamburgers/hamburgers.min.css" />
+<link rel="stylesheet" href="~/Content/CustomElements/vendor/select2/select2.min.css" />
+
+
+
+
+
+@* Here starts the new login form *@
+
+<div class="limiter">
+
+    <div class="container-login100">
+
+
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="~/Content/CustomElements/images/img-01.png" alt="IMG">
+            </div>
+
+            @using (Html.BeginForm("Login", "Dashboard", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login100-form validate-form", role = "form" }))
+            {
+
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <span class="login100-form-title">
+                    @ViewBag.Title
+                </span>
+                //email place
+                <div class="wrap-input100 validate-input">
+                    @Html.LabelFor(m => m.Email, new { @class = "" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "input100" })
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+
+                //password place
+
+                <div class="wrap-input100 validate-input">
+                    @Html.LabelFor(m => m.Password, new { @class = "" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "input100" })
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit">
+                        Se connecter
+                    </button>
+                </div>
+
+                //Register place
+                <div class="text-center p-t-136">
+                    <a class="txt2" href="@Url.Action("Register","Dashboard" )"> S'inscrire </a>
+                    @*@Html.ActionLink("S'inscrire", "Register")*@
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Content/CustomElements/vendor/bootstrap/js/popper.js"></script>
+<script src="~/Content/CustomElements/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Scripts/CustomScripts/js/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/Scripts/CustomScripts/tilt/tilt.jquery.min.js"></script>
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+<!--===============================================================================================-->
+<script src="~/Scripts/CustomScripts/js/main.js"></script>

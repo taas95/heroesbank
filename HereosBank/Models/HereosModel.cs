@@ -5,7 +5,7 @@ namespace HereosBank.Models
     using System.Data.Entity;
     using System.Linq;
 
-    public class HereosModel : IdentityDbContext<Utilisateur>
+    public class HeroModelDBContext : IdentityDbContext<Userman>
     {
         // Your context has been configured to use a 'HereosModel' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -13,7 +13,7 @@ namespace HereosBank.Models
         // 
         // If you wish to target a different database and/or database provider, modify the 'HereosModel' 
         // connection string in the application configuration file.
-        public HereosModel()
+        public HeroModelDBContext()
             : base("name=HereosModel")
         {
         }
@@ -27,6 +27,7 @@ namespace HereosBank.Models
         public virtual DbSet<Agence> Agences { get; set; }
         public virtual DbSet<Compte> Comptes { get; set; }
         public virtual DbSet<Utilisateur> Users { get; set; }
+
         public virtual DbSet<Transaction> Transactions { get; set; }
     }
 

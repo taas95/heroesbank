@@ -10,9 +10,10 @@ using HereosBank.Models;
 
 namespace HereosBank.Controllers
 {
+    [Authorize]
     public class AgencesController : Controller
     {
-        private HereosModel db = new HereosModel();
+        private HeroModelDBContext db = new HeroModelDBContext();
 
         // GET: Agences
         public ActionResult Index()
